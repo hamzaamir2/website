@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Register</title>
+
+    <style !important>
+        h1 {
+            padding-top: 50px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .custom-card {
+            border: 2px solid #007bff;
+            /* Blue border */
+            box-shadow: 0 4px 20px rgba(0, 123, 255, 0.2);
+            /* Blue-tinted shadow */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Register Page</h1>
+    </center>
+
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <form onsubmit="event.preventDefault(); login();">
+    <div class="card custom-card" style="width: 400px;">
+      <div class="card-body">
+        
+        <!-- Name -->
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Name</label>
+          <input type="text" class="form-control" id="nameInput" placeholder="Enter Your Name">
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <label for="emailInput" class="form-label">Email Address</label>
+          <input type="email" class="form-control" id="emailInput" placeholder="Email@example.com">
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <label for="passwordInput" class="form-label">Password</label>
+          <input type="password" class="form-control" id="passwordInput" placeholder="New Password">
+        </div>
+
+        <!-- Re-Password -->
+        <div class="mb-3">
+          <label for="rePasswordInput" class="form-label">Re-Password</label>
+          <input type="password" id="rePasswordInput" class="form-control" placeholder="Confirm your Password">
+        </div>
+
+        <!-- Show Password Checkbox -->
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="showPasswordCheck" onclick="showPassword()">
+          <label class="form-check-label" for="showPasswordCheck">Show Password</label>
+        </div>
+
+        <!-- Password Help Text -->
+        <div id="passwordHelpBlock" class="form-text">
+          Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-primary w-100 mt-3">Submit</button>
+
+      </div>
+    </div>
+  </form>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+<script>
+  function showPassword() {
+    const passwordInput = document.getElementById("passwordInput");
+    const rePasswordInput = document.getElementById("rePasswordInput");
+    
+    const newType = passwordInput.type === "password" ? "text" : "password";
+    passwordInput.type = newType;
+    rePasswordInput.type = newType;
+  }
+
+  function login() {
+    alert("Form submitted successfully!");
+    // Add your login logic here
+  }
+</script>
+</html>
